@@ -1,0 +1,23 @@
+pl:
+  actions:
+    new: Nowy
+    create: Stwórz
+    create_another: Stwórz kolejny
+    update: Uaktualnij
+  bucket:
+    floor: Od
+    ceiling: Do
+    rate: Kwota
+    unit: Jednostka
+  bucket_rate: Przedział cenowy
+  new_bucket_rate: Nowy przedział cenowy
+  configure_bucket_rates: Możesz teraz ustawić stawki dla poszczególnych przediałów/
+  bucket_rates: Zarządzanie stawkami
+  bucket_rates_description: Zarządzaj stawkami dla zaawansowancyh kalkulatorów
+  default_amount: Domyślna stawka
+  bucket_list_information: "
+    Obliczanie kosztów dostawy jest oparte na przedziałach jednostek.
+    By używać kalkulatora, musisz stworzyć przedziały bez przerw pomiędzy nimi.
+    Gdy nie jest zdefiniowany przedział domyślnie kwota wybrana przy tworzeniu kalkulatora.
+    Dla kwot zamówienia większych niż największy ustawiony przedział, brana jest kwota z ostatniego przedziału.
+    "

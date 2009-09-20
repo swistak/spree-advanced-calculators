@@ -1,0 +1,19 @@
+<h2><%= t('calculator_settings') %></h2>
+
+<%= f.label(:calc_type, t("calculator")) %>
+<%= f.collection_select(:calculator_type, @calculators, :to_s, :description, {}, {:id => "calc-type"}) %>
+
+<% if !@object.new_record? %>
+  <% f.fields_for :calculator do |calculator_form| %>
+    <div class="calculator-settings">
+      <%= preference_fields(@object.calculator, calculator_form) %>
+    </div>
+  <% end %>
+  <% if @object.calculator.respond_to?(:preferences) %>
+    <div id="calculator-settings-warning"><%= t('calculator_settings_warning')%></div>
+  <% end %>
+  <% if @object.calculator.advanced? && !@object.calculator.name.blank? %>
+    <%= t(:configure_bucket_rates) %>
+    <%= link_to t(:here), :controller => 'admin/bucket_rates', :action => 'new', :calculator_id => @object.calculator.id %>
+  <% end %>
+<% end %>

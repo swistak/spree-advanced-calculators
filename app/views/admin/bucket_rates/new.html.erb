@@ -1,0 +1,11 @@
+<h1><%= t("actions.new")+" "+t("bucket_rate") %></h1>
+
+<%= error_messages_for :bucket_rate %>
+
+<% form_for(:bucket_rate, :url => collection_url) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <p>
+    <%= submit_tag t("actions.create") %>
+    <%= submit_tag t("actions.create_another"), :name => "create_another" %>
+  </p>
+<% end %>

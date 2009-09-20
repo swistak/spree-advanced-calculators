@@ -1,0 +1,33 @@
+<table>
+  <tr>
+    <td><%=t("calculator")%>:</td>
+    <td>
+      <%= collection_select(
+        :bucket_rate,
+        :calculator_id, @available_calculators,
+        :id, :name, {}, {"style" => "width:200px"}
+      ) %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= t("floor", :scope => :bucket) %>:</td>
+    <td>
+      <%= f.text_field :price_floor, {"style" => "width:60px"} %>
+      <%= t('unit', :scope => :bucket) %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= t("ceiling", :scope => :bucket) %>:</td>
+    <td>
+      <%= f.text_field :price_ceiling, {"style" => "width:60px"} %>
+      <%= t('unit', :scope => :bucket) %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= t("rate", :scope => :bucket) %>:</td>
+    <td>
+      <%= f.text_field :shipping_rate, {"style" => "width:60px"} %>
+      <%= t(:'number.currency.format.unit') %>
+    </td>
+  </tr>
+</table>
