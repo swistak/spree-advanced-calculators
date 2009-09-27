@@ -1,7 +1,7 @@
 class AdvancedCalculatorsExtension < Spree::Extension
   version "1.0"
   description "Set of advanced calculators"
-  url "http://github.com/swistak/spree-advanced_calculators/tree/master"
+  url "http://github.com/swistak/spree-advanced-calculators/tree/master"
 
   def activate
 

@@ -1,9 +1,9 @@
-class CreatePriceBucketShippingRates < ActiveRecord::Migration
+class CreateAdvancedCalculatorRates < ActiveRecord::Migration
   def self.up
-    create_table :advanced_calculator_rates do |t|
+    create_table :bucket_rates do |t|
       t.references :calculator
-	    t.decimal :floor, :precision => 8, :scale => 2
-	    t.decimal :ceiling, :precision => 8, :scale => 2
+      t.decimal :floor, :precision => 8, :scale => 2
+      t.decimal :ceiling, :precision => 8, :scale => 2
       t.decimal :rate, :precision => 8, :scale => 2
       t.timestamps
     end
@@ -12,7 +12,7 @@ class CreatePriceBucketShippingRates < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :advanced_calculator_rates
+    drop_table :bucket_rates
     remove_column :calculators, :advanced
   end
 end

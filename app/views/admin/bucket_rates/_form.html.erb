@@ -1,32 +1,36 @@
 <table>
+  <% if @bucket_rate.calculator_id.blank? %>
+    <tr>
+      <td><%=t("calculator")%>:</td>
+      <td>
+        <%= collection_select(
+          :bucket_rate,
+          :calculator_id, @available_calculators,
+          :id, :name, {}, {"style" => "width:200px"}
+        ) %>
+      </td>
+    </tr>
+  <% else %>
+    <%= f.hidden_field :calculator_id %>
+  <% end %>
   <tr>
-    <td><%=t("calculator")%>:</td>
+    <td><%= t("floor", :scope => 'activerecord.attributes.bucket_rate') %>:</td>
     <td>
-      <%= collection_select(
-        :bucket_rate,
-        :calculator_id, @available_calculators,
-        :id, :name, {}, {"style" => "width:200px"}
-      ) %>
+      <%= f.text_field :floor, {"style" => "width:60px"} %>
+      <%= @bucket_rate.unit %>
     </td>
   </tr>
   <tr>
-    <td><%= t("floor", :scope => :bucket) %>:</td>
+    <td><%= t("ceiling", :scope => 'activerecord.attributes.bucket_rate') %>:</td>
     <td>
-      <%= f.text_field :price_floor, {"style" => "width:60px"} %>
-      <%= t('unit', :scope => :bucket) %>
+      <%= f.text_field :ceiling, {"style" => "width:60px"} %>
+      <%= @bucket_rate.unit %>
     </td>
   </tr>
   <tr>
-    <td><%= t("ceiling", :scope => :bucket) %>:</td>
+    <td><%= t("rate", :scope => 'activerecord.attributes.bucket_rate') %>:</td>
     <td>
-      <%= f.text_field :price_ceiling, {"style" => "width:60px"} %>
-      <%= t('unit', :scope => :bucket) %>
-    </td>
-  </tr>
-  <tr>
-    <td><%= t("rate", :scope => :bucket) %>:</td>
-    <td>
-      <%= f.text_field :shipping_rate, {"style" => "width:60px"} %>
+      <%= f.text_field :rate, {"style" => "width:60px"} %>
       <%= t(:'number.currency.format.unit') %>
     </td>
   </tr>

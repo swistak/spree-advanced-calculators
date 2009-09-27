@@ -16,9 +16,9 @@
   <thead>
     <tr>
       <th><%= t("calculator")%></th>
-      <th><%= t("floor", :scope => :bucket) %></th>
-      <th><%= t("ceiling", :scope => :bucket)%></th>
-      <th><%= t("rate", :scope => :bucket) %></th>
+      <th><%= t("floor",   :scope => 'activerecord.attributes.bucket_rate') %></th>
+      <th><%= t("ceiling", :scope => 'activerecord.attributes.bucket_rate')%></th>
+      <th><%= t("rate",    :scope => 'activerecord.attributes.bucket_rate') %></th>
       <th><%= t("action")%></th>
     </tr>
   </thead>
@@ -26,8 +26,8 @@
     <% @bucket_rates.sort.each do |rate| %>
       <tr>
         <td><%=rate.calculator.name %></td>
-        <td><%=rate.floor %></td>
-        <td><%=rate.ceiling %></td>
+        <td><%=rate.floor %> <%= rate.unit %></td>
+        <td><%=rate.ceiling %> <%= rate.unit %></td>
         <td><%=number_to_currency(rate.rate) %></td>
         <td>
           <%= link_to_edit rate %> &nbsp;
@@ -36,7 +36,7 @@
       </tr>
     <% end %>
     <% if @bucket_rates.empty? %>
-      <tr><td colspan="5">None.</td></tr>
+      <tr><td colspan="5"><%= t(:none) %></td></tr>
     <% end %>
   </tbody>
 </table>

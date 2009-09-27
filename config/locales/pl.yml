@@ -4,20 +4,32 @@ pl:
     create: Stwórz
     create_another: Stwórz kolejny
     update: Uaktualnij
-  bucket:
-    floor: Od
-    ceiling: Do
-    rate: Kwota
-    unit: Jednostka
-  bucket_rate: Przedział cenowy
-  new_bucket_rate: Nowy przedział cenowy
-  configure_bucket_rates: Możesz teraz ustawić stawki dla poszczególnych przediałów/
-  bucket_rates: Zarządzanie stawkami
-  bucket_rates_description: Zarządzaj stawkami dla zaawansowancyh kalkulatorów
+  activerecord:
+    attributes:
+      bucket_rate:
+        floor: Początek przedziału
+        ceiling: Koniec przedziału
+        rate: Kwota
+        unit: Jednostka
+    models:
+      bucket_rate:
+        one: Stawka dla przedziału
+        other: Stawki dla przedziałów
+    errors:
+      messages:
+        higher_or_equal: powinien być większy lub równy od Początku przedziału
+  bucket_rate: Stawka dla przedziału
+  new_bucket_rate: Zdefiniuj stawkę dla nowego przedziału
+  edit_bucket_rate: Zmień stawkę dla przedziału
+  configure_bucket_rates: Przejdź do konfiguracji stawek dla poszczególnych przedziałów
+  configure_new_bucket_rate: Należy teraz skonfigurować stawki dla poszczególnych przedziałów
+  bucket_rates: Edycja stawek i przedziałów
+  bucket_rates_description: Zarządzaj stawkami oraz przedziałami dla zaawansowancyh kalkulatorów
   default_amount: Domyślna stawka
   bucket_list_information: "
     Obliczanie kosztów dostawy jest oparte na przedziałach jednostek.
-    By używać kalkulatora, musisz stworzyć przedziały bez przerw pomiędzy nimi.
-    Gdy nie jest zdefiniowany przedział domyślnie kwota wybrana przy tworzeniu kalkulatora.
+    By używać kalkulatora przedziałowego, musisz stworzyć przedziały bez przerw pomiędzy nimi.
+    Gdy nie jest zdefiniowany żaden przedział domyślnie brana jest kwota wybrana przy tworzeniu kalkulatora.
     Dla kwot zamówienia większych niż największy ustawiony przedział, brana jest kwota z ostatniego przedziału.
     "
+  click_here: Kliknij tutaj

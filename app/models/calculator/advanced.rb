@@ -19,19 +19,23 @@ class Calculator::Advanced < Calculator
     calculable.respond_to?(:name) ? calculable.name : calculable.to_s
   end
 
-  def get_shipping_rate(value)
+  def unit
+    self.class.unit
+  end
+
+  def get_rate(value)
     # First try to find where price falls within price floor and ceiling
-    bucket = find(:first,
+    bucket = BucketRate.find(:first,
       :conditions => [
-        "calculator_id = ? and ? between floor and ceiling",
-        self.id, value
+        "calculator_id = ? and floor <= ? and ceiling > ?",
+        self.id, value, value
       ])
 
     if bucket
       return(bucket.rate)
     else
       # find largest one
-      bucket = find(:last, :conditions => ['calculator_id = ?', self.id], :order => "ceiling DESC")
+      bucket = BucketRate.find(:last, :conditions => ['calculator_id = ?', self.id], :order => "ceiling DESC")
       # check if we've found largest one, and item_total is higher then ceiling
       if bucket && value > bucket.price_ceiling
         return(bucket.rate)

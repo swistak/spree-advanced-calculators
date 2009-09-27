@@ -21,7 +21,11 @@ class Admin::BucketRatesController < Admin::BaseController
     
   private
   def collection
-    @collection ||= end_of_association_chain.all(:order => 'calculator_id DESC, floor ASC')
+    conditions = params[:calculator_id] ? {:calculator_id => params[:calculator_id]} : {}
+    @collection ||= end_of_association_chain.all(
+      :conditions => conditions,
+      :order => 'calculator_id DESC, floor ASC'
+    )
   end
 	
   def load_data

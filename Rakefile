@@ -111,7 +111,7 @@ end
 # For extensions that are in transition
 desc 'Test the advanced_calculators extension.'
 Rake::TestTask.new(:test) do |t|
-  t.libs << 'lib'
+  t.libs << 'lib' << 'test'
   t.pattern = 'test/**/*_test.rb'
   t.verbose = true
 end
