@@ -37,7 +37,7 @@ class Calculator::Advanced < Calculator
       # find largest one
       bucket = BucketRate.find(:last, :conditions => ['calculator_id = ?', self.id], :order => "ceiling DESC")
       # check if we've found largest one, and item_total is higher then ceiling
-      if bucket && value > bucket.price_ceiling
+      if bucket && value > bucket.ceiling
         return(bucket.rate)
       else
         return(false) # if there's no rates, or we've hit a hole, let calculator use default rate.
