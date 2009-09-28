@@ -1,6 +1,6 @@
 class Calculator::WeightBucket < Calculator::Advanced
   def self.description
-    I18n.t("weight_bucket")
+    I18n.t("weight_bucket", :scope => :calculator)
   end
 
   def self.unit
