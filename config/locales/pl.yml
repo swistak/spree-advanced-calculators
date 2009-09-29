@@ -30,6 +30,7 @@ pl:
   bucket_rates: Edycja stawek i przedziałów
   bucket_rates_description: Zarządzaj stawkami oraz przedziałami dla zaawansowancyh kalkulatorów
   default_amount: Domyślna stawka
+  default_weight: Standardowa waga
   bucket_list_information: "
     Obliczanie kosztów dostawy jest oparte na przedziałach jednostek.
     By używać kalkulatora przedziałowego, musisz stworzyć przedziały bez przerw pomiędzy nimi.
