@@ -18,7 +18,7 @@ pl:
     errors:
       messages:
         higher_or_equal: powinien być większy lub równy od Początku przedziału
-  calculator:
+  calculator_names:
     weight_bucket: Zależnie od wagi(przedziałami)
     quantity_bucket: Zależnie od ilości przedmiotów(przedziałami)
     price_bucket: Zależnie od ceny(przedziałami)

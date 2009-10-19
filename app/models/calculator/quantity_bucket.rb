@@ -1,6 +1,6 @@
 class Calculator::QuantityBucket < Calculator::Advanced
   def self.description
-    I18n.t("quantity_bucket", :scope => :calculator)
+    I18n.t("quantity_bucket", :scope => :calculator_names)
   end
 
   def self.unit
