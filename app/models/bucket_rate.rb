@@ -1,7 +1,7 @@
 class BucketRate < ActiveRecord::Base
   belongs_to :calculator
   
-  validates_presence_of :floor, :ceiling, :rate
+  validates_presence_of :floor, :ceiling, :rate, :calculator_id
 
   named_scope :order_by_floor, :order => "floor"
   named_scope :for_calculator, lambda{ |calc|

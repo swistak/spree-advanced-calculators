@@ -25,7 +25,7 @@
   <tbody>
     <% @bucket_rates.sort.each do |rate| %>
       <tr>
-        <td><%=rate.calculator.name %></td>
+        <td><%=rate.calculator ? rate.calculator.name: "-" %></td>
         <td><%=rate.floor %> <%= rate.unit %></td>
         <td><%=rate.ceiling %> <%= rate.unit %></td>
         <td><%=number_to_currency(rate.rate) %></td>
