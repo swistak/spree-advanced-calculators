@@ -38,4 +38,6 @@ pl:
     Dla kwot zamówienia większych niż największy ustawiony przedział, brana jest kwota z ostatniego przedziału.
     "
   click_here: Kliknij tutaj
+  calculator_settings: Calculator Settings
+  calculator_text: Calculator
   weight_unit: kg
