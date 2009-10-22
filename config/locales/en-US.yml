@@ -36,7 +36,7 @@ en-US:
      In order to use the Bucket Rate calculator, you need to create intervals without gaps between them. 
      <br />When the order total does not fall within an interval, the default rate will be used.
      Order amounts larger than the largest ceiling will use the last interval rate.
-     <br />NOTE: The FLOOR value is exclusive and the CEILING value is inclusive.
+     <br />NOTE: The FLOOR value is inclusive and the CEILING value is exclusive.
     "
   click_here: Click Here
   calculator_settings: Calculator Settings
