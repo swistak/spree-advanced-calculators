@@ -1,0 +1,43 @@
+--- 
+en-US:
+  actions:
+    new: New
+    create: Create
+    create_another: Create Another
+    update: Update
+  activerecord:
+    attributes:
+      bucket_rate:
+        floor: Floor
+        ceiling: Ceiling
+        rate: Rate
+        unit: Unit
+    models:
+      bucket_rate:
+        one: One
+        other: Other
+    errors:
+      messages:
+        higher_or_equal: Higher or Equal
+  calculator_names:
+    weight_bucket: Weight Bucket
+    quantity_bucket: Quantity Bucket
+    price_bucket: Price Bucket
+  bucket_rate: Bucket Rate
+  new_bucket_rate: New Bucket Rate
+  edit_bucket_rate: Edit Bucket Rate
+  configure_bucket_rates: Configure Bucket Rates
+  configure_new_bucket_rate: Configure New Bucket Rate
+  bucket_rates: Bucket Rates
+  bucket_rates_description: Bucket Rates Description
+  default_amount: Default Amount
+  default_weight: Default Weight
+  bucket_list_information: "
+     In order to use the Bucket Rate calculator, you need to create intervals without gaps between them. 
+     <br />When the order total does not fall within an interval, the default rate will be used.
+     Order amounts larger than the largest ceiling will use the last interval rate.
+     <br />NOTE: The FLOOR value is exclusive and the CEILING value is inclusive.
+    "
+  click_here: Click Here
+  calculator_settings: Calculator Settings
+  calculator_text: Calculator
