@@ -1,5 +1,5 @@
 class Calculator::Advanced < Calculator
-  has_many :bucket_rates, :as => :calculator, :dependent => :destroy
+  has_many :bucket_rates, :foreign_key => :calculator_id, :dependent => :destroy
   preference :default_amount, :decimal, :default => 0
 
   before_save :set_advanced
