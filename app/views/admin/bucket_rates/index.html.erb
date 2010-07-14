@@ -15,7 +15,8 @@
 <table class="index">
   <thead>
     <tr>
-      <th><%= t("calculator")%></th>
+      <th><%= t("name")%></th>
+      <th><%= t("shipping_calculator")%></th>
       <th><%= t("floor",   :scope => 'activerecord.attributes.bucket_rate') %></th>
       <th><%= t("ceiling", :scope => 'activerecord.attributes.bucket_rate')%></th>
       <th><%= t("rate",    :scope => 'activerecord.attributes.bucket_rate') %></th>
@@ -26,6 +27,7 @@
     <% @bucket_rates.sort.each do |rate| %>
       <tr>
         <td><%=rate.calculator ? rate.calculator.name: "-" %></td>
+        <td><%=rate.calculator ? rate.calculator.class.description: "-" %></td>
         <td><%=rate.floor %> <%= rate.unit %></td>
         <td><%=rate.ceiling %> <%= rate.unit %></td>
         <td><%=number_to_currency(rate.rate) %></td>
